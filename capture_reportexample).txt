@@ -1,0 +1,14 @@
+Wireshark Network Capture Analysis Report
+
+Platform: Kali Linux
+Tool: Wireshark
+
+Protocols Identified:
+1. HTTP - Observed GET and POST requests.
+2. DNS - Resolved domain names to IP addresses.
+3. TCP - Transport protocol used for web and DNS traffic.
+
+Observations:
+- Majority of packets were TCP-based web traffic.
+- Multiple DNS queries for visited domains.
+- No suspicious or abnormal traffic detected in the short capture.

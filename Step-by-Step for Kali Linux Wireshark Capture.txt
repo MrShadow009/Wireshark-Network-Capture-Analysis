@@ -1,0 +1,92 @@
+Step-by-Step for Kali Linux Wireshark Capture
+1️⃣ Install Wireshark
+bash
+Copy
+Edit
+sudo apt update
+sudo apt install wireshark -y
+Explanation: Updates package lists and installs Wireshark.
+
+You might be asked if non-superusers can capture packets — choose Yes to avoid needing sudo.
+
+2️⃣ Launch Wireshark
+bash
+Copy
+Edit
+wireshark
+Explanation: Opens the Wireshark GUI in Kali Linux.
+
+3️⃣ Select Active Network Interface
+In Wireshark, you’ll see a list of interfaces (like eth0, wlan0).
+
+Pick the one with the most active traffic (usually wlan0 for Wi-Fi or eth0 for wired).
+
+Click Start Capturing Packets (blue shark fin icon).
+
+4️⃣ Generate Network Traffic
+Open a browser and visit some websites.
+
+Run a ping test in the terminal:
+
+bash
+Copy
+Edit
+ping -c 5 google.com
+Explanation: Creates visible packet activity for analysis.
+
+5️⃣ Stop Capture
+In Wireshark, click the red square stop button after ~1 minute.
+
+You now have raw packet data.
+
+6️⃣ Apply Filters
+In the Wireshark Filter Bar, try:
+
+text
+Copy
+Edit
+http
+dns
+tcp
+Explanation: Shows only packets for that specific protocol.
+
+This helps identify the types of traffic in your capture.
+
+7️⃣ Identify Protocols
+Check the "Protocol" column.
+
+At minimum, you should see:
+
+HTTP – Web browsing traffic.
+
+DNS – Domain name lookups.
+
+TCP – Transmission protocol used for web & DNS.
+
+8️⃣ Export Capture as .pcap
+Go to File → Save As
+
+Name it network_capture.pcap
+
+Choose PCAP file format and save.
+
+9️⃣ Create Report
+Write a small text file (capture_report.txt) summarizing:
+
+Date & system used.
+
+Protocols identified.
+
+Observations (normal traffic, any anomalies).
+
+10️⃣ Organize Files for GitHub
+Final folder structure:
+
+Copy
+Edit
+Wireshark-Network-Capture-Analysis/
+├── README.md
+├── capture_report.txt
+├── network_capture.pcap
+└── screenshots/
+Place your real .pcap and screenshots here.
